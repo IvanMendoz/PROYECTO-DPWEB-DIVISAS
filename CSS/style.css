@@ -117,14 +117,14 @@ body {
 .containeer .content-form-input {
   grid-area: form;
   min-height: 86.9vh;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .containeer .content-form-input form {
-  border: 2px solid green;
+  border: 12px solid green;
   padding: 15px;
   width: 70%;
   position: relative;
@@ -159,6 +159,48 @@ body {
   grid-area: content;
   min-height: 86.9vh;
   background: rgba(255, 255, 255, 0.4);
+}
+
+/*ESTILoS PARA EL SLIDER DE LA PAGINA DE INGRESAR REGISTROS*/
+.containeer .slideshow {
+  margin: auto;
+  margin-top: 10px;
+  border: 10px solid red;
+}
+.containeer .slides {
+  width: 100%;
+  height: auto;
+}
+.containeer .slides img {
+  width: 100%;
+}
+.containeer .slidesjs-pagination {
+  background: #424242;
+  list-style: none;
+  overflow: hidden;
+}
+.containeer .slidesjs-pagination li {
+  float: left;
+}
+.containeer .slidesjs-pagination li a {
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.containeer .slidesjs-pagination li a:hover {
+  background: #000000;
+}
+.containeer .slides .active {
+  background: #000000;
+}
+.containeer .slidesjs-navigation {
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */

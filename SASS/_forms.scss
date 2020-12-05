@@ -8,14 +8,14 @@
     &-input {
       grid-area: form;
       min-height: 86.9vh;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
       align-items: center;
 
       form {
-        border: 2px solid green;
+        border: 12px solid green;
         padding: 15px;
         width: 70%;
         position: relative;

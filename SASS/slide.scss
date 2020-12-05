@@ -1,0 +1,51 @@
+/*ESTILoS PARA EL SLIDER DE LA PAGINA DE INGRESAR REGISTROS*/
+.containeer {
+  .slideshow {
+    margin: auto;
+    margin-top: 10px;
+    border: 10px solid red;
+  }
+
+  .slides {
+    width: 100%;
+    height: auto;
+  }
+
+  .slides img {
+    width: 100%;
+  }
+
+  .slidesjs-pagination {
+    background: #424242;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  .slidesjs-pagination li {
+    float: left;
+  }
+
+  .slidesjs-pagination li a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .slidesjs-pagination li a:hover {
+    background: #000000;
+  }
+
+  .slides .active {
+    background: #000000;
+  }
+
+  .slidesjs-navigation {
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    float: right;
+  }
+}

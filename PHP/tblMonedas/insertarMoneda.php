@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CDN DE BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <!-- CDN DE FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- CDN DE FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- CDN DE ESTILOS PROPIOS -->
     <link rel="stylesheet" href="../../CSS/style.css">
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- LINKS DE REFERENCIA DE GOOGLE FONTS -->
@@ -53,8 +53,8 @@
         <div class="dropdown">
             <button class="dropdown-btn" href="#">Mantenimiento base de datos <i class="fas fa-database"></i></button>
             <div class="dropdown-content">
-            <a href="PHP/createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
-            <a href="PHP/dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
+            <a href="../createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
+            <a href="../dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
         </div>
     <!-- </div>
                 <a href="" class="btn">Realizar conversion <i class="fas fa-trash-alt"></i></a>
@@ -122,7 +122,42 @@
         </div>
 
         <div class="content-form-information">
-    
+            
+        <div class="slideshow">
+        <div class="slides">
+          <img src="https://d500.epimg.net/cincodias/imagenes/2015/03/13/mercados/1426251429_476349_1426251583_noticia_normal.jpg
+          " alt="BERETTA" />
+          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
+          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
+          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
+          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
+        </div>
+      </div>
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script src="JS/jquery.slides.js"></script>
+      <script>
+        $(function () {
+          $(".slides").slidesjs({
+            play: {
+              active: true,
+              // [boolean] Generate the play and stop buttons.
+              // You cannot use your own buttons. Sorry.
+              effect: "slide",
+              // [string] Can be either "slide" or "fade".
+              interval: 3000,
+              // [number] Time spent on each slide in milliseconds.
+              auto: true,
+              // [boolean] Start playing the slideshow on load.
+              swap: true,
+              // [boolean] show/hide stop and play buttons
+              pauseOnHover: false,
+              // [boolean] pause a playing slideshow on hover
+              restartDelay: 2500,
+              // [number] restart delay on inactive slideshow
+            },
+          });
+        });
+      </script>
         </div>
     </div>
     </div>

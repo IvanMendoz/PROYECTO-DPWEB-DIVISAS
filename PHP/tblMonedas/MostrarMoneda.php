@@ -52,8 +52,8 @@
                 <div class="dropdown">
                     <button class="dropdown-btn" href="#">Mantenimiento base de datos <i class="fas fa-database"></i></button>
                     <div class="dropdown-content">
-                        <a href="PHP/createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
-                        <a href="PHP/dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
+                        <a href="../createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
+                        <a href="../dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- <a href="" class="btn">Realizar conversion <i class="fas fa-trash-alt"></i></a>
