@@ -1,0 +1,84 @@
+/*ESTILOS PARA EL MENU PRINCIPAL DE TODAS LAS PAGINAS*/
+
+@mixin dropdown-btn() {
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.6s all 0.02s;
+}
+
+.containeer {
+  min-height: 100vh;
+  backdrop-filter: blur(4px);
+  .menu {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.6);
+
+    &-logo {
+      img {
+        width: 140px;
+        height: 60px;
+      }
+    }
+
+    &-button {
+      .dropdown {
+        display: inline-block;
+        padding: 0px 7px;
+        position: relative;
+        transition: 0.6s all 0.5s;
+
+        &-btn {
+          @include dropdown-btn();
+          &:hover {
+            background: #000;
+            color: #fff;
+          }
+        }
+
+        &-content {
+          position: absolute;
+          min-width: 265px;
+          background: rgb(213, 213, 213);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.3);
+          border-radius: 9px;
+          display: none;
+          transition: 0.6s all 0.5s;
+          z-index: 10;
+
+          &:hover .dropdown-btn {
+            background: #000;
+          }
+
+          a {
+            color: #000;
+            font-weight: 500;
+            font-size: 16px;
+            display: block;
+            padding: 10px 13px;
+            text-decoration: none;
+            transition: 0.3s all 0.02s;
+
+            &:hover {
+              background: #fff;
+              border-radius: 9px;
+            }
+          }
+        }
+
+        &:hover .dropdown-content {
+          display: block;
+        }
+      }
+    }
+  }
+}

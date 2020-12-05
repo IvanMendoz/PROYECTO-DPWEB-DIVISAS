@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background: url(../IMAGES/bg.jpg) center center/cover;
+}
+
+.containeer .active {
+  color: #fff;
+  background: #000;
+}
+
+/*ESTILOS PARA EL MENU PRINCIPAL DE TODAS LAS PAGINAS*/
+.containeer {
+  min-height: 100vh;
+  backdrop-filter: blur(4px);
+}
+.containeer .menu {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.6);
+}
+.containeer .menu-logo img {
+  width: 140px;
+  height: 60px;
+}
+.containeer .menu-button .dropdown {
+  display: inline-block;
+  padding: 0px 7px;
+  position: relative;
+  transition: 0.6s all 0.5s;
+}
+.containeer .menu-button .dropdown-btn {
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.6s all 0.02s;
+}
+.containeer .menu-button .dropdown-btn:hover {
+  background: #000;
+  color: #fff;
+}
+.containeer .menu-button .dropdown-content {
+  position: absolute;
+  min-width: 265px;
+  background: #d5d5d5;
+  box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 9px;
+  display: none;
+  transition: 0.6s all 0.5s;
+  z-index: 10;
+}
+.containeer .menu-button .dropdown-content:hover .dropdown-btn {
+  background: #000;
+}
+.containeer .menu-button .dropdown-content a {
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  padding: 10px 13px;
+  text-decoration: none;
+  transition: 0.3s all 0.02s;
+}
+.containeer .menu-button .dropdown-content a:hover {
+  background: #fff;
+  border-radius: 9px;
+}
+.containeer .menu-button .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ESTILOS PARA EL CONTENEDOR DE LA PAGINA PRINCIPAL */
+.containeer .content {
+  backdrop-filter: blur(2px);
+  min-height: 86.8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.containeer .content .content-info .dropdown-btn {
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.6s all 0.02s;
+  font-size: 22px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.4);
+}
+.containeer .content .content-info .dropdown-btn:hover {
+  transform: scale(1.05, 1.05);
+  background: #000;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

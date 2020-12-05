@@ -1,0 +1,123 @@
+CREATE DATABASE BasePaises;
+
+------------------------------------------------------------------------------------------------
+
+USE base_paises;
+
+------------------------------------------------------------------------------------------------
+
+CREATE TABLE tblpaises (
+    Id_pais INT PRIMARY KEY AUTO_INCREMENT,  
+    nombre varchar(50)
+);
+
+------------------------------------------------------------------------------------------------
+
+CREATE TABLE tblMonedas (
+    id_moneda INT PRIMARY KEY AUTO_INCREMENT, 
+    nombre varchar(20),
+    val_local float, 
+    val_dolar float, 
+    id_pais int,foreign key(id_pais) references tblpaises(Id_pais)
+);
+
+-----------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE CrearPais
+( 
+    IN nom VARCHAR(50)
+)
+ 
+insert into tblpaises (nombre)
+values (nom);
+
+----------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE ModificarPais
+ ( 
+    IN par_idPais INT,
+    IN par_nombre VARCHAR(50)
+   
+  )
+ 
+update tblpaises set nombre = par_nombre where Id_pais = par_idPais;
+
+---------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE EliminarPais
+ ( 
+    IN par_idPais INT
+  )
+  delete from  tblpaises where Id_pais = par_idPais;
+
+--------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE MostrarPais
+  ( 
+    
+  )
+  SELECT * FROM tblpaises;
+
+--------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE MostrarPaisPorId
+  (
+    IN par_idpais INT
+  )
+  SELECT * FROM tblpaises
+  where id_pais = par_idpais;
+
+--------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE CrearMoneda
+  ( 
+      IN nom VARCHAR(50),
+      IN val_l float,
+      IN val_d float,
+      IN id_pa int
+  )
+   
+  insert into tblMonedas (nombre,val_local,val_dolar,id_pais)
+  values (nom,val_l,val_d,id_pa);
+
+--------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE ModificarMonedas
+   ( 
+      IN par_idMoneda INT,
+      IN nom VARCHAR(50),
+      IN val_l float,
+      IN val_d float,
+      IN id_pa int
+     
+    )
+   
+  update tblMonedas set nombre = nom,val_local=val_l,val_dolar=val_d,id_pais=id_pa where id_moneda = par_idMoneda;
+
+--------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE EliminarMoneda
+   ( 
+      IN par_idMoneda INT
+    )
+    delete from  tblMonedas where id_moneda = par_idMoneda;
+
+--------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE MostraMonedas
+    ( 
+      
+    )
+    SELECT * FROM tblMonedas;
+
+-------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE MostraMonedasPorId
+    (
+      IN par_idMoneda INT
+    )
+    SELECT * FROM tblMonedas
+    where id_moneda = par_idMoneda;
+
+------------------------------------------------------------------------------------------
+

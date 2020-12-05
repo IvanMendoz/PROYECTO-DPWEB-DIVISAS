@@ -1,0 +1,36 @@
+/* ESTILOS PARA EL CONTENEDOR DE LA PAGINA PRINCIPAL */
+.containeer {
+  .content {
+    backdrop-filter: blur(2px);
+    // display: grid;
+    // grid-template:
+    //   "form info" auto/
+    //   40% auto;
+
+    // &-form {
+    //   //   grid-area: form;
+    //   min-height: 88.2vh;
+    //   color: #fff;
+
+    min-height: 86.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .content-info {
+      .dropdown-btn {
+        @include dropdown-btn();
+        font-size: 22px;
+        color: #000;
+        background: rgba(255, 255, 255, 0.4);
+
+        &:hover {
+          transform: scale(1.05, 1.05);
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
