@@ -75,8 +75,9 @@
         <div class="containner-content">
         <h1>Conversion de moneda</h1>
             <form  method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="" >
+                <p>Seleccione la moneda que desea convertir</p>
                 <p>
-                    Moneda y cantidad que desea convertir: 
+                    Cantidad que desea convertir: 
                 </p>
                 <p>
                 <input type="number" name="cantidad" min="0.01" step=".01" id="cantidad" required>
@@ -136,7 +137,7 @@
                 </select>
                 </p>
                 <div class="buttons">
-                    <input type="submit" value="Convertir" name=submit >
+                    <input type="submit" value="Convertir" >
                     <input type="reset" value="Borrar">
                 </div>
             </form>
@@ -144,36 +145,12 @@
         </div>
     </div>
 
+
     <?php
+        $cantidad = $_POST['cantidad'];
 
-include($_SERVER['DOCUMENT_ROOT'].'/DIVISAS/include/config.inc');
-$conexion = mysqli_connect($server,$user,$password,$DB);
-mysqli_set_charset($conexion,"utf8");
-    
-        if(isset($_POST['submit'])){
-            $monedaSeleccionada = $_POST['opcion'];
-            $monedaConversion = $_POST['conversion'];
-            $cantidad = $_POST['cantidad'];
-
-            $query = "select val_local from tblMonedas where nombre = '$monedaConversion'";
-            $runQuery = mysqli_query( $conexion, $query );
-            while ($row = mysqli_fetch_array( $runQuery)){
-                $valorLocal = $row['val_local'];
-
-            }
-
-            floatval($valorLocal);
-            echo $monedaSeleccionada;
-            echo $monedaConversion;
-            echo $cantidad;
-            echo $valorLocal * $cantidad." ".$monedaConversion;
-
-            echo "<h1>HOLAAAAA</h1>";
-        }
-
-    
+        echo $cantidad;
     ?>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
