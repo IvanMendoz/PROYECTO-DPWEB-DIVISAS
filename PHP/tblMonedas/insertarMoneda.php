@@ -138,7 +138,7 @@
                 <img src="../../IMAGES/monedas3.jpg" class="d-block w-100" alt="DIVISAS">
                 </div>
                 <div class="carousel-item">
-                <img src="../../IMAGES/monedas4.jpg" class="d-block w-100" alt="DIVISAS">
+                <img src="../../IMAGES/monedas4.png" class="d-block w-100" alt="DIVISAS">
                 </div>
                 <div class="carousel-item">
                 <img src="../../IMAGES/monedas5.jpg" class="d-block w-100" alt="DIVISAS">
