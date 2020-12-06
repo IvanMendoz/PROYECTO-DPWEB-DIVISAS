@@ -33,10 +33,10 @@
             <div class="dropdown">
                 <button class="dropdown-btn" href="#">Mantenimiento Paises <i class="fas fa-globe-americas"></i></button>
                 <div class="dropdown-content">
-                    <a href="#" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
-                    <a href="#" class="">Ver pasies existentes <i class="fas fa-list-ol"></i></a>
-                    <a href="#" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
-                    <a href="#" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
+                <a href="../tblpaises/insertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
+                <a href="../tblpaises/Mostra.php" class="">Ver pasies existentes <i class="fas fa-list-ol"></i></a>
+                <a href="../tblpaises/modificar.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
+                <a href="#" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
             </div>
         </div>
         <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA MONEDAS -->

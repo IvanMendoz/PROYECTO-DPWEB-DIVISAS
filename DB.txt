@@ -18,7 +18,8 @@ CREATE TABLE tblMonedas (
     nombre varchar(20),
     val_local float, 
     val_dolar float, 
-    id_pais int,foreign key(id_pais) references tblpaises(Id_pais)
+    id_pais int,
+    foreign key(id_pais) references tblpaises(Id_pais)
 );
 
 -----------------------------------------------------------------------------------------------

@@ -63,8 +63,10 @@ $db = mysqli_select_db($conexion, $DB) or die("Upps! no se ha podido conectar a 
 //Realizando la query para crear la tabla Alumno si es que no existe
 
 
-$query="CREATE TABLE tblpaises (Id_pais INT PRIMARY KEY AUTO_INCREMENT, 
-nombre varchar(50))";
+$query="CREATE TABLE tblpaises (
+  Id_pais INT PRIMARY KEY AUTO_INCREMENT,  
+  nombre varchar(50)
+)";
 
 $runQuery = mysqli_query($conexion, $query) or die("no se pudo crear la tabla tblpaises");
 
@@ -81,8 +83,14 @@ $runQuery = mysqli_query($conexion, $query) or die("no se pudo crear la tabla tb
 
 //Realizando la query para crear la tabla Alumno si es que no existe
 
-$query="CREATE TABLE tblMonedas (id_moneda INT PRIMARY KEY AUTO_INCREMENT, 
-nombre varchar(20),val_local float, val_dolar float, id_pais int,foreign key(id_pais) references tblpaises(Id_pais))";
+$query="CREATE TABLE tblMonedas (
+  id_moneda INT PRIMARY KEY AUTO_INCREMENT, 
+  nombre varchar(20),
+  val_local float, 
+  val_dolar float, 
+  id_pais int,
+  foreign key(id_pais) references tblpaises(Id_pais)
+)";
 
 $runQuery = mysqli_query($conexion, $query) or die ("No se pudo crear la tabla tblMonedas");
 
