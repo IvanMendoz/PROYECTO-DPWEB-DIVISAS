@@ -35,7 +35,7 @@
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
                 <div class="dropdown">
-                    <button style="background:#000;" class="dropdown-btn active" href="#">Mantenimiento Paises <i class="fas fa-globe-americas"></i></button>
+                    <button style="background:#000;" class="dropdown-btn activee" href="#">Mantenimiento Paises <i class="fas fa-globe-americas"></i></button>
                     <div class="dropdown-content">
                         <a href="./InsertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
                         <a href="./Mostra.php" class="" >Ver pasies existentes <i class="fas fa-list-ol"></i></a>

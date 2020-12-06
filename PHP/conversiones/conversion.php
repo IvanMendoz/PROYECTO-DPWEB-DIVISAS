@@ -8,33 +8,35 @@
     <!-- CDN DE FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- CDN DE FONT AWESOME -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../../CSS/style.css">
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- LINKS DE REFERENCIA DE GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <title>Pagina principal</title>
+    <title>Realizar conversion</title>
 </head>
 <body>
-    <div class="containeer">
+    
+<div class="containeer">
         <nav class="menu">
             <div class="menu-logo">
-                <a href="index.html"> <img src="IMAGES/divisas7.png" alt="DIVISAS"> </a>
+                <a href="index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
             </div>
             <div class="menu-button">
                 <!-- MENU DROPDOWN PARA CONVERSION DE DIVISAS -->
                 <div class="dropdown">
-                    <button onclick="location.href ='index.html'" class="dropdown-btn activee" style="background:#000;">Pagina principal <i class="fas fa-home"></i></button>
+                    <button  style="background:#000;" onclick="location.href ='../../index.html'" class="dropdown-btn activee" >Pagina principal <i class="fas fa-home"></i></button>
                     <div class="dropdown-content">
+                    <a href="./conversion.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
                 <div class="dropdown">
                     <button class="dropdown-btn" href="#">Mantenimiento Paises <i class="fas fa-globe-americas"></i></button>
                     <div class="dropdown-content">
-                        <a href="PHP/tblpaises/InsertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
-                        <a href="PHP/tblpaises/Mostra.php" class="">Ver pasies existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="PHP/tblpaises/modificar.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
+                        <a href="../tblpaises/insertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
+                        <a href="../tblpaises/Mostra.php" class="">Ver pasies existentes <i class="fas fa-list-ol"></i></a>
+                        <a href="../tblpaises/modificar.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
                         <a href="#" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
@@ -42,9 +44,9 @@
                 <div class="dropdown">
                     <button class="dropdown-btn" href="#">Mantenimiento Monedas <i class="fab fa-bitcoin"></i></button>
                     <div class="dropdown-content">
-                        <a href="PHP/tblMonedas/insertarMoneda.php" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
-                        <a href="PHP/tblMonedas/MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="PHP/tblMonedas/ModificarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
+                        <a href="./insertarMoneda.php" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
+                        <a href="./MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
+                        <a href="./ModificarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
                         <a href="#" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
@@ -64,17 +66,18 @@
             
             </div>
         </nav>
-        <div class="content">
-            <div class="content-info">
-                <img src="IMAGES/coin.gif   " alt="">
-                <p><h1 style="font-weight:bold; color:#000;">REALIZA TU CONVERSION AHORA</h1></p>
-                <p><h3 style="font-weight:bold; color:#000;">La forma mas rapida y sencilla de realizar el cambio de moneda.</h3></p>
-                <button class="dropdown-btn activee" onclick="location.href ='PHP/conversiones/conversion.php'">
-                    Realizar Conversion   <i class="fas fa-dollar-sign"></i>
-                </button>
-            </div>
+        <div class="containner-content">
+        <h1>HOLIIII</h1>
+            <form action="./conversion.php" method="post">
+                <input type="text">
+                
+
+            </form>
         </div>
     </div>
-    <script src="JS/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ body {
   background: url(../IMAGES/bg.jpg) center center/cover;
 }
 
-.containeer .active {
+.containeer .activee {
   color: #fff;
   background: #000;
 }
@@ -159,6 +159,7 @@ body {
   grid-area: content;
   min-height: 86.9vh;
   background: rgba(255, 255, 255, 0.4);
+  padding: 20px;
 }
 
 /*ESTILoS PARA EL SLIDER DE LA PAGINA DE INGRESAR REGISTROS*/

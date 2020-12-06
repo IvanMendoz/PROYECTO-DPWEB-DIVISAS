@@ -26,7 +26,7 @@
             <div class="dropdown">
                 <button onclick="location.href ='../../index.html'" class="dropdown-btn">Pagina principal <i class="fas fa-home"></i></button>
             <div class="dropdown-content">
-            <a href="#" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
+            <a href="../conversiones/conversion.php" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
             </div>
             </div>
             <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
@@ -41,7 +41,7 @@
         </div>
         <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA MONEDAS -->
         <div class="dropdown">
-            <button class="dropdown-btn active" style="background:#000;" href="#">Mantenimiento Monedas <i class="fab fa-bitcoin"></i></button>
+            <button class="dropdown-btn activee" style="background:#000;" href="#">Mantenimiento Monedas <i class="fab fa-bitcoin"></i></button>
             <div class="dropdown-content">
                     <a href="./insertarMoneda.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Ingresar nueva moneda <i class="fas fa-table"></i></a>
                     <a href="./MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
@@ -122,44 +122,48 @@
         </div>
 
         <div class="content-form-information">
-            
-        <div class="slideshow">
-        <div class="slides">
-          <img src="https://d500.epimg.net/cincodias/imagenes/2015/03/13/mercados/1426251429_476349_1426251583_noticia_normal.jpg
-          " alt="BERETTA" />
-          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
-          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
-          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
-          <img src="../../IMAGES/divisas7.png" alt="BERETTA" />
-        </div>
-      </div>
-      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-      <script src="JS/jquery.slides.js"></script>
-      <script>
-        $(function () {
-          $(".slides").slidesjs({
-            play: {
-              active: true,
-              // [boolean] Generate the play and stop buttons.
-              // You cannot use your own buttons. Sorry.
-              effect: "slide",
-              // [string] Can be either "slide" or "fade".
-              interval: 3000,
-              // [number] Time spent on each slide in milliseconds.
-              auto: true,
-              // [boolean] Start playing the slideshow on load.
-              swap: true,
-              // [boolean] show/hide stop and play buttons
-              pauseOnHover: false,
-              // [boolean] pause a playing slideshow on hover
-              restartDelay: 2500,
-              // [number] restart delay on inactive slideshow
-            },
-          });
-        });
-      </script>
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="../../IMAGES/monedas1.jpg" class="d-block w-100" alt="DIVISAS">
+                </div>
+                <div class="carousel-item">
+                <img src="../../IMAGES/monedas3.jpg" class="d-block w-100" alt="DIVISAS">
+                </div>
+                <div class="carousel-item">
+                <img src="../../IMAGES/monedas4.jpg" class="d-block w-100" alt="DIVISAS">
+                </div>
+                <div class="carousel-item">
+                <img src="../../IMAGES/monedas5.jpg" class="d-block w-100" alt="DIVISAS">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        
+
+
         </div>
     </div>
     </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 </html>

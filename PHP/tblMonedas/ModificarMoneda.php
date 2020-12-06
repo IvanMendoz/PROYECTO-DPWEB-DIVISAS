@@ -41,9 +41,9 @@
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA MONEDAS -->
                 <div class="dropdown">
-                    <button style="background:#000;" class="dropdown-btn active" href="#">Mantenimiento Monedas <i class="fab fa-bitcoin"></i></button>
+                    <button style="background:#000;" class="dropdown-btn activee" href="#">Mantenimiento Monedas <i class="fab fa-bitcoin"></i></button>
                     <div class="dropdown-content">
-                        <a href="#" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
+                        <a href="./insertarMoneda.php" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
                         <a href="./MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
                         <a href="./ModificarMoneda.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Modificar moneda existente <i class="fas fa-edit"></i></a>
                         <a href="#" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
