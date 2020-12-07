@@ -66,11 +66,27 @@
           
           </div>
       </nav>
-	  <h2>Formulario de Insertar País </h2> <br>
-     <form name="FrmInsertar" action="Insertar.php" method="post">
-         Nombre del país: <input type="text" name="txtNombre" size="50" minlength="3" required><br>
-         <input type = "submit" value= "Insertar Nuevo País">
-     </form>
+
+      <div class="content-form">
+          <div class="content-form-input">
+              <div class="form-box">
+                  <h2>Formulario de Insertar País </h2>
+                 <form name="FrmInsertar" action="Insertar.php" method="post">
+                     <div class="in">
+                         <input type="text" name="txtNombre" minlength="3" required>
+                         <label for="">Nombre pais</label>
+                    </div>
+                    <div class="">
+                        <input type = "submit" value= "Insertar Nuevo País">
+                    </div>
+                 </form>
+              </div>
+              <div class="content-form-information">
+
+              </div>
+          </div>
+      </div>
+
    </div>
    </body>
 </html>

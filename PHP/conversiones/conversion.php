@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- CDN DE FONT AWESOME -->
     <link rel="stylesheet" href="../../CSS/style.css">
-    <link rel="stylesheet" href="../../CSS/estilos.css">
+    <link rel="stylesheet" href="../../plugins/animate.css/animate.css">
+    <link rel="stylesheet" href="../../plugins/sweetAlert2/sweetalert2.min.css">
     <!-- LINKS DE REFERENCIA DE GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -19,6 +20,9 @@
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
+  <!-- SWEETALERT -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <title>Realizar conversion</title>
 </head>
 <body>
@@ -72,6 +76,50 @@
             
             </div>
         </nav>
+        <script>
+        <?php
+            include('../../include/config.inc');
+            $connecction = mysqli_connect($server,$user,$password,$DB);
+            mysqli_set_charset($connecction,"utf8");
+            $query = "select nombre from tblMonedas;";
+            $runQuery=mysqli_query( $connecction, $query );
+            while ($row=mysqli_fetch_array($runQuery))
+            {
+        ?>
+
+        window.onload= () =>{
+            ( async ()=>{
+                const {value:monedas } = await Swal.fire({
+                    type: 'success',
+                    title:'Seleccione una moneda',
+                    text: 'Esta moneda se usara para realizar la conversion.',
+                    padding: '15px',
+                    footer:'<b>Es muy inportante</b>',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey:false,
+                    stopKeydownPropagation:false,
+                    input: 'select',
+                    inputValue: '',
+                    inputOptions: {
+                    '<?php echo $row['nombre']?>': '<?php echo $row['nombre']?>',
+                    otro: 'Otra moneda...'
+                    }
+                });
+
+                if(monedas){
+                    alert(monedas);
+                }
+
+                console.log(monedas);
+
+            })()
+
+        }
+        <?php
+    }
+        ?>
+    </script>
         <div class="containner-content">
         <h1>Conversion de moneda</h1>
             <form  method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="" >
@@ -155,20 +203,34 @@ mysqli_set_charset($conexion,"utf8");
             $monedaConversion = $_POST['conversion'];
             $cantidad = $_POST['cantidad'];
 
-            $query = "select val_local from tblMonedas where nombre = '$monedaConversion'";
-            $runQuery = mysqli_query( $conexion, $query );
-            while ($row = mysqli_fetch_array( $runQuery)){
-                $valorLocal = $row['val_local'];
+            if($monedaSeleccionada ==  "dolar estadounidense"){
+                $query = "select val_local from tblMonedas where nombre = '$monedaConversion'";
+                $runQuery = mysqli_query( $conexion, $query );
+                while ($row = mysqli_fetch_array( $runQuery)){
+                    $valorLocal = $row['val_local'];
+    
+                }
+    
+                floatval($valorLocal);
+                echo $monedaSeleccionada;
+                echo $monedaConversion;
+                echo $cantidad;
+                echo "<br>".$valorLocal * $cantidad." ".$monedaConversion;
+    
+                echo "<h1>HOLAAAAA</h1>";
 
+            }else{
+
+                $query = "select val_local from tblMonedas where nombre = '$monedaSeleccionada'";
+                $runQuery = mysqli_query($conexion, $query);
+                while ($row = mysqli_fetch_array($runQuery)){
+                    $valorLocal = $row["val_local"];
+                }
+                floatval($valorLocal);
+                echo ($cantidad * 1)/$valorLocal;
+                echo "<h1>PUTO :V</h1>";
             }
 
-            floatval($valorLocal);
-            echo $monedaSeleccionada;
-            echo $monedaConversion;
-            echo $cantidad;
-            echo $valorLocal * $cantidad." ".$monedaConversion;
-
-            echo "<h1>HOLAAAAA</h1>";
         }
 
     
@@ -178,30 +240,33 @@ mysqli_set_charset($conexion,"utf8");
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    <script src="../../JS/main.js"></script>
+    <script src="../../JS/sweetalert.js"></script>
+    <script src="../../JS/jquery-3.3.1.min.js"></script>
+    <script src="../../popper/popper.min.js"></script>
+    <script src="../../plugins/sweetAlert2/sweetalert2.all.min.js"></script>
 
 
-    <!-- <script>
-        console.log("holiiiii");
+    <script>
+        // console.log("holiiiii");
 
-        function conversion(){
-        let cantida = document.getElementById('cantidad').value;
-        cantida = cantida+1;
-        let datae = "cantidad="+cantidad;
-        console.log(cantida.value);
+        // function conversion(){
+        // let cantida = document.getElementById('cantidad').value;
+        // cantida = cantida+1;
+        // let datae = "cantidad="+cantidad;
+        // console.log(cantida.value);
 
-        $ajax({
-            type: 'post',
-            url: 'conversion.php',
-            data: datae,
-            success: function(res){
-                $("#resultado").html(res);
-            }
-        });
+        // $ajax({
+        //     type: 'post',
+        //     url: 'conversion.php',
+        //     data: datae,
+        //     success: function(res){
+        //         $("#resultado").html(res);
+        //     }
+        // });
 
-        return false;
-        }
-
-    </script> -->
+        // return false;
+        // }
+    </script>
+    
 </body>
 </html>

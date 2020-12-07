@@ -13,39 +13,70 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border: 5px solid orange;
 
-      form {
-        border: 12px solid green;
-        padding: 15px;
-        width: 70%;
-        position: relative;
+      .form-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 4px solid rgb(9, 189, 221);
 
-        .input {
-          width: 100%;
-          height: 100%;
-          color: #000;
-          font-weight: bold;
-          border: none;
-          padding-top: 20px;
-        }
+        form {
+          border: 12px solid green;
+          padding: 15px;
+          width: 70%;
 
-        label {
-          position: absolute;
-          bottom: 0px;
-          left: 0%;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          border-bottom: 1px solid #000;
+          // .form-box {
+          //   width: 40%;
+          //   background: tomato;
+          //   padding: 20px;
+          // }
 
-          &::after {
-            content: "";
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
-            height: 100%;
+          & input {
+            padding: 10px 0;
+            margin-bottom: 30px;
             width: 100%;
-            border-bottom: #5fa8d3;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid #000;
+            padding: 5px 5px;
+            padding-bottom: -5px;
+            padding-top: 20px;
+            font-size: 17px;
+            font-weight: bold;
+          }
+
+          & input[type="submit"] {
+            border-bottom: 3px solid green;
+            cursor: pointer;
+          }
+
+          & form .in {
+            position: relative;
+          }
+
+          & form .in label {
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            pointer-events: none;
+            transition: 0.5s;
+            font-size: 17px;
+            color: rgb(163, 163, 163);
+          }
+
+          & input:focus ~ label,
+          & input:valid ~ label {
+            top: 0.12px;
+            color: blue;
+            font-weight: bold;
+          }
+
+          & input:focus,
+          & input:valid {
+            border-bottom: 2px solid blue;
           }
         }
       }

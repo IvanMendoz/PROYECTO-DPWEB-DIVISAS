@@ -67,58 +67,54 @@
     </nav>
     <div class="content-form">
         <div class="content-form-input">
-            <form action="InsertarMone.php" method="post">
-                <div class="">
-                    <div>
-                        <input class="input" type="text" autocomplete="off" name="txtNombreM" minlength="3" required>
-                        <label for="txtNombreM" class="label-name">
-                            <span class="content-name">Nombre moneda</span>
-                        </label>
+            <div class="form-box">
+                <form action="InsertarMone.php" method="post">
+                    <div class="">
+                        <div class="in">
+                            <input type="text" name="txtNombreM" minlength="3" required>
+                            <label class="">Nombre moneda</label>
+                        </div>
+                        <div class="in">
+                            <input type="number" name="VL" step=".01" min="0" required>
+                            <label class="">Valor local</label>
+                        </div>
+                        <div class="in">
+                            <input type="number" name="VD" step=".01" min="0" required>
+                            <label class="">Valor en dolar</label>
+                        </div>
+                        <select name="slpais" id="" required>
+                            <option value="">Seleccione...</option>
+                        <?php
+                            include('../../include/config.inc');
+                            $connecction = mysqli_connect($server,$user,$password,$DB);
+                            mysqli_set_charset($connecction,"utf8");
+                            $query = "select nombre from tblpaises;";
+                            $runQuery=mysqli_query( $connecction, $query );
+                            while ($row=mysqli_fetch_array($runQuery))
+                            {
+                        ?>
+                                <option value="<?php echo $row['nombre']?>"><?php echo $row['nombre']?></option>
+        
+                        <?php
+                            }
+                        ?>
+                        </select>
+                        <?php	
+        
+                            include('../../include/config.inc');
+                            $connecction = mysqli_connect($server,$user,$password,$DB);
+                            mysqli_set_charset($connecction,"utf8");
+        
+                        
+                            mysqli_close($connecction);
+                        ?>
+                        <p>
+                            <input type="submit" value="Enviar">
+                            <input type="reset" value="Cancelar">
+                        </p>
                     </div>
-                    <div>
-                        <input class="input" type="number" autocomplete="off" name="VL" step=".01" min="0" required>
-                        <label for="VL" class="label-name">
-                            <span class="content-name">Valor local</span>
-                        </label>
-                    </div>
-                    <div>
-                        <input class="input" type="number" autocomplete="off" name="VD" step=".01" min="0" required>
-                        <label for="VD" class="label-name">
-                            <span class="content-name">Valor dolar</span>
-                        </label>
-                    </div>
-                    <select name="slpais" id="" required>
-                        <option value="">Seleccione...</option>
-                    <?php
-                        include('../../include/config.inc');
-                        $connecction = mysqli_connect($server,$user,$password,$DB);
-                        mysqli_set_charset($connecction,"utf8");
-                        $query = "select nombre from tblpaises;";
-                        $runQuery=mysqli_query( $connecction, $query );
-                        while ($row=mysqli_fetch_array($runQuery))
-                        {
-                    ?>
-                            <option value="<?php echo $row['nombre']?>"><?php echo $row['nombre']?></option>
-    
-                    <?php
-                        }
-                    ?>
-                    </select>
-                    <?php	
-    
-                        include('../../include/config.inc');
-                        $connecction = mysqli_connect($server,$user,$password,$DB);
-                        mysqli_set_charset($connecction,"utf8");
-    
-                    
-                        mysqli_close($connecction);
-                    ?>
-                    <p>
-                        <input type="submit" value="Enviar">
-                        <input type="reset" value="Cancelar">
-                    </p>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
 
         <div class="content-form-information">
