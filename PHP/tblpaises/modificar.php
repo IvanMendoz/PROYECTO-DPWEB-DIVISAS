@@ -93,21 +93,28 @@
 
  ?>
 
-     <h2>Informacion del registro seleccionada</h2>
+<div class="containeer-contenido">
+    <div class="form-box">
 
-     <form method = "post" name="frmvalor" action="almacenarmodificar.php" id="form">
- 
-        id país:<input type="text" name="txtId_pais" value="<?php echo $row['Id_pais'];?>" disabled required><br><br> 
-        <input type="text" name="txtId_pais" style="display:none;" value="<?php echo $row['Id_pais'];?>">
+        <form method = "post" name="frmvalor" action="almacenarmodificar.php" id="form">
+        <h2>Informacion del registro seleccionada</h2>
+            <div class="">
+                <input type="text" name="txtId_pais" value="<?php echo $row['Id_pais'];?>" disabled required><br><br> 
+                <input type="text" name="txtId_pais" style="display:none;" value="<?php echo $row['Id_pais'];?>">
+                <label for="">Id pais</label>
+            </div>
+            <div class="">
+                <input type="text" name="txtNombre" minlength="3" value="<?php echo $row['nombre'];?>" required><br><br>
+                <label for="">Nombre pais</label>
+            </div>
+            <button onclick="f1()" class="btn" >Modificar</button>
+        </form>
 
-         nombre:  <input type="text" name="txtNombre" minlength="3" value="<?php echo $row['nombre'];?>" required><br><br>
-
-     </form>
-
- <br>
-     <button onclick="f1()" >Modificar</button>
-<br>
-     <a href="../../index.html">inicio</a><br>
+    </div>
+    <div class="form-info">
+        <h1>HOLIII</h1>
+    </div>
+</div>
      </div>
 </body>
 

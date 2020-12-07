@@ -96,7 +96,7 @@
                             while ($row=mysqli_fetch_array($runQuery))
                             {
                         ?>
-                                <option value="<?php echo $row['nombre']?>"><?php echo $row['nombre']?></option>
+                                <option style="color:#000" value="<?php echo $row['nombre']?>"><?php echo $row['nombre']?></option>
         
                         <?php
                             }

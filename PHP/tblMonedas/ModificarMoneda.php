@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
         <title>Monedas ingresadas</title>     
-	</head>
+</head>
 	<body >
     <div class="containeer">
         <nav class="menu">
@@ -65,7 +65,6 @@
             
             </div>
         </nav>
-    <h1>Datos registrados en la pagina</h1>
 <?php
     //capturar el codigo a modificar
 //cargar la conexion y octener la conexion activa $mysql
@@ -74,8 +73,6 @@
     mysqli_set_charset($conexion,"utf8");
     $idMoneda = $_REQUEST['id_moneda'];
 
-    echo $idMoneda;
-
     $query="call MostraMonedasPorId('$idMoneda');";
     $runQuery=$conexion->query($query);
     $row=$runQuery->fetch_assoc(); 
@@ -83,58 +80,75 @@
     mysqli_close($conexion);    
 ?>
     
-    <h2>Informacion del registro seleccionada</h2>
-    <form method = "post" name="frmvalor" action="./MonedaUpdate.php">
+    <div class="containeer-contenido">
+        <div class="form-box">
+            <form method = "post" name="frmvalor" action="./MonedaUpdate.php">
+                <h2>Informacion del registro seleccionada</h2>
 
- 
-
-        id_moneda :<input type="text" name="id_moneda2" value="<?php echo $row['id_moneda'];?>" disabled required><br><br> 
-        <input type="text" name="id_moneda2" style="visibility:hidden" value="<?php echo $row['id_moneda'];?>"><br><br>
-        nombre :  <input type="text" name="txtnombre" value="<?php echo $row['nombre'];?>" minlength="3" required><br><br>
-        Valor Local :<input type="number" name="txtVL" value="<?php echo $row['val_local'];?>" required min="0" step=".01"><br><br>
-        Valor Dollar:<input type="number" name="txtVD" value="<?php echo $row['val_dolar'];?>" required min="0" step=".01"><br><br>    
-        <?php
-			include('../../include/config.inc');
-			$conexion = mysqli_connect($server,$user,$password,$DB);
-            mysqli_set_charset($conexion,"utf8");
-            $id_moneda = $row['id_moneda'];
-			$consulta = "select nombre from tblpaises where Id_pais = '$id_moneda';";
-			$resultado=mysqli_query( $conexion, $consulta ) or die ( "No se puede Mostrar los registros");
-			if ($resultado)
-			{
-                echo "<div>";
-                echo"<select class='posti' name='slpais'>";
-				while ($row=mysqli_fetch_array($resultado))
-				{
-					                
+                <div class="">
+                    <input type="text" name="id_moneda2" value="<?php echo $row['id_moneda'];?>" disabled required>
+                    <input type="text" name="id_moneda2" style="display:none;" value="<?php echo $row['id_moneda'];?>">
+                    <label for="">id moneda</label> 
+                </div>
+                <div class="">
+                    <input type="text" name="txtnombre" value="<?php echo $row['nombre'];?>" minlength="3" required>
+                    <label for="">Nombre</label>
+                </div>
+                <div class="">
+                    <input type="number" name="txtVL" value="<?php echo $row['val_local'];?>" required min="0" step=".01">
+                    <label for="">Valor local</label>
+                </div>
+                <div class="">
+                    <input type="number" name="txtVD" value="<?php echo $row['val_dolar'];?>" required min="0" step=".01">  
+                    <label for="">Valor en dolar</label> 
+                </div>
+                <?php
+                    include('../../include/config.inc');
+                    $conexion = mysqli_connect($server,$user,$password,$DB);
+                    mysqli_set_charset($conexion,"utf8");
+                    $id_moneda = $row['id_moneda'];
+                    $consulta = "select nombre from tblpaises where Id_pais = '$id_moneda';";
+                    $resultado=mysqli_query( $conexion, $consulta ) or die ( "No se puede Mostrar los registros");
+                    if ($resultado)
+                    {
+                        echo "<div>";
+                        echo"<span style = 'font-weight:500; font-size:17px;'>Seleccione el pais</span> <select name='slpais'>";
+                        while ($row=mysqli_fetch_array($resultado))
+                        {
+                            
+                            echo "<option>";
+                            echo $row['nombre'];
+                            echo "</option>";
+                            
+                            
+                        }	
+                        echo"</select>";
+                        echo "</div>";
+                    }
+                    else
+                    {
+                        echo ("Surgio problema para Mostrar los registros.<br>");
+                        echo ("El problema es: .<br>");
+                        echo ("Codigo de error: .<b>".mysql_errno ()."</b><br>");
+                        echo ("Descripcion de error: <b>".mysql_error ()."</b><br>");
+                    }	
                     
-                    echo "<option>";
-                    echo $row['nombre'];
-                    echo "</option>";
-					
-					
-				}	
-                echo"</select>";
-                echo "</div>";
-			}
-			else
-			{
-				echo ("Surgio problema para Mostrar los registros.<br>");
-				echo ("El problema es: .<br>");
-				echo ("Codigo de error: .<b>".mysql_errno ()."</b><br>");
-				echo ("Descripcion de error: <b>".mysql_error ()."</b><br>");
-            }	
-            
-            echo "<br>";
-            echo "<br>";
-          
-			mysqli_close($conexion);
-		?>
-<br>
-<input type="submit" name="btnModificar" value="Modificar">
-<br>    
-        </form>
+                    echo "<br>";
+                    echo "<br>";
+                  
+                    mysqli_close($conexion);
+                ?>
+                <div class="">
+                    <input type="submit" name="btnModificar" value="Modificar" class="btn margin">
+                </div>
+        
+            </form>
         </div>
+        <div class="form-info">
+            <h1>HOLIII</h1>
+        </div>
+    </div>
+    </div>
 </body>
-</html>|
+</html>
 

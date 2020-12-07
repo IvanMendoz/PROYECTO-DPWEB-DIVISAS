@@ -112,91 +112,109 @@ body {
   color: #fff;
 }
 
-.containeer .content-form {
+.containeer-contenido {
   display: grid;
-  grid-template: "form content" auto/40% 60%;
+  grid-template: "form info" auto/40% 60%;
 }
-.containeer .content-form-input {
+.containeer .form-box {
   grid-area: form;
-  min-height: 86.9vh;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid orange;
-}
-.containeer .content-form-input .form-box {
   width: 100%;
-  height: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 86.9vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid #0917dd;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
 }
-.containeer .content-form-input .form-box form {
-  border: 12px solid blue;
-  padding: 15px;
-  width: 70%;
+.containeer .form-box::before {
+  content: "";
+  display: block;
+  width: 520px;
+  height: 520px;
+  background: rgba(255, 7, 7, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
 }
-.containeer .content-form-input .form-box form input {
+.containeer .form-box input {
   padding: 10px 0;
   margin-bottom: 30px;
-  width: 100%;
+  width: 90%;
   outline: none;
   border: none;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #fff;
   padding: 5px 5px;
   padding-bottom: -5px;
   padding-top: 20px;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 500;
+  background: none;
+  color: #fff;
 }
-.containeer .content-form-input .form-box form input[type=submit] {
-  border-bottom: 3px solid green;
+.containeer .form-box input[type=submit] {
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.6s all 0.02s;
+  outline: none;
   cursor: pointer;
+  background: #000;
+  width: 40%;
 }
-.containeer .content-form-input .form-box form form .in {
+.containeer .form-box .btn {
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.6s all 0.02s;
+  outline: none;
+  background: #000;
+  color: #fff;
+  width: 30%;
+  transition: 0.6s all 0.02s ease;
+}
+.containeer .form-box .btn:hover {
+  transform: scale(1.05, 1.05);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+}
+.containeer .form-box .margin {
+  margin-top: -25px;
+}
+.containeer .form-box select {
+  border: 1px solid #669ddb;
+  background: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: #fff;
+  outline: none;
+}
+.containeer .form-box form div {
   position: relative;
 }
-.containeer .content-form-input .form-box form form .in label {
+.containeer .form-box form div label {
   position: absolute;
   top: 10px;
-  left: 5px;
+  left: 32px;
   pointer-events: none;
   transition: 0.5s;
   font-size: 17px;
-  color: #a3a3a3;
+  color: #ededed;
 }
-.containeer .content-form-input .form-box form input:focus ~ label, .containeer .content-form-input .form-box form input:valid ~ label {
+.containeer .form-box input:focus ~ label, .containeer .form-box input:valid ~ label {
   top: 0.12px;
-  color: blue;
+  color: #669ddb;
   font-weight: bold;
 }
-.containeer .content-form-input .form-box form input:focus, .containeer .content-form-input .form-box form input:valid {
-  border-bottom: 2px solid blue;
-}
-.containeer .content-form-information {
-  grid-area: content;
-  min-height: 86.9vh;
-  background: rgba(255, 255, 255, 0.4);
-  padding: 20px;
-  text-align: center;
-}
-.containeer .content-form-information .slide {
-  width: 70%;
-  margin: auto;
-  border: 1px solid gray;
-}
-.containeer .content-form-information .slide::after {
-  content: '"Imagenes de referencia"';
-  display: block;
-  width: 100;
-  height: 31px;
-  background: #000;
-  color: #fff;
-  padding: 5px;
-  font-weight: inherit;
+.containeer .form-box input:focus, .containeer .form-box input:valid {
+  border-bottom: 2px solid #669ddb;
 }
 
 /*ESTILoS PARA EL SLIDER DE LA PAGINA DE INGRESAR REGISTROS*/

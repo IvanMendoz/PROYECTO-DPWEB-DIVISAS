@@ -16,8 +16,6 @@
 	if(isset($_REQUEST['cf'])){
 		$Idpais=$_REQUEST['Id_pais'];
 
-
-
 		$resultado=mysqli_query( $conexion, "select id_moneda from tblmonedas where id_pais=".$Idpais.";");
 		if($fila=mysqli_fetch_row($resultado)){
 			
