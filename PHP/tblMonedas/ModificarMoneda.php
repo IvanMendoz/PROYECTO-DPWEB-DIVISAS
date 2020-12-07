@@ -19,14 +19,14 @@
     <div class="containeer">
         <nav class="menu">
             <div class="menu-logo">
-                <a href="index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
+                <a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
             </div>
             <div class="menu-button">
                 <!-- MENU DROPDOWN PARA CONVERSION DE DIVISAS -->
                 <div class="dropdown">
                     <button onclick="location.href ='../../index.html'" class="dropdown-btn" >Pagina principal <i class="fas fa-home"></i></button>
                     <div class="dropdown-content">
-                    <a href="#" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
+                    <a href="../conversiones/conversion.php" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
@@ -35,8 +35,8 @@
                     <div class="dropdown-content">
                         <a href="../tblpaises/insertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
                         <a href="../tblpaises/Mostra.php" class="">Ver pasies existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="../tblpaises/modificar.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
-                        <a href="#" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
+                        <a href="../tblpaises/Mostra.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
+                        <a href="../tblpaises/Mostra.php" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA MONEDAS -->
@@ -45,16 +45,16 @@
                     <div class="dropdown-content">
                         <a href="./insertarMoneda.php" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
                         <a href="./MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="./ModificarMoneda.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Modificar moneda existente <i class="fas fa-edit"></i></a>
-                        <a href="#" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
+                        <a href="./MostrarMoneda.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Modificar moneda existente <i class="fas fa-edit"></i></a>
+                        <a href="./MostrarMoneda.php" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA BASE -->
                 <div class="dropdown">
                     <button class="dropdown-btn" href="#">Mantenimiento base de datos <i class="fas fa-database"></i></button>
                     <div class="dropdown-content">
-                        <a href="PHP/createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
-                        <a href="PHP/dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
+                        <a href="../createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
+                        <a href="../dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- <a href="" class="btn">Realizar conversion <i class="fas fa-trash-alt"></i></a>

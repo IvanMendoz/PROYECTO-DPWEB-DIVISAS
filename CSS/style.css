@@ -48,6 +48,7 @@ body {
   font-weight: 500;
   font-size: 17px;
   transition: 0.6s all 0.02s;
+  outline: none;
 }
 .containeer .menu-button .dropdown-btn:hover {
   background: #000;
@@ -100,6 +101,7 @@ body {
   font-weight: 500;
   font-size: 17px;
   transition: 0.6s all 0.02s;
+  outline: none;
   font-size: 22px;
   color: #000;
   background: rgba(255, 255, 255, 0.4);
@@ -130,10 +132,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid #09bddd;
+  border: 4px solid #0917dd;
 }
 .containeer .content-form-input .form-box form {
-  border: 12px solid green;
+  border: 12px solid blue;
   padding: 15px;
   width: 70%;
 }
@@ -179,6 +181,22 @@ body {
   min-height: 86.9vh;
   background: rgba(255, 255, 255, 0.4);
   padding: 20px;
+  text-align: center;
+}
+.containeer .content-form-information .slide {
+  width: 70%;
+  margin: auto;
+  border: 1px solid gray;
+}
+.containeer .content-form-information .slide::after {
+  content: '"Imagenes de referencia"';
+  display: block;
+  width: 100;
+  height: 31px;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  font-weight: inherit;
 }
 
 /*ESTILoS PARA EL SLIDER DE LA PAGINA DE INGRESAR REGISTROS*/
@@ -221,6 +239,65 @@ body {
   display: inline-block;
   padding: 10px 20px;
   float: right;
+}
+
+.containeer table {
+  width: 90%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.6);
+  transition: 0.6s all 0.3s ease;
+}
+.containeer table:hover {
+  transform: scale(1.05, 1.05);
+  border: 2px solid #000;
+}
+.containeer table th,
+.containeer table td {
+  padding: 10px;
+  border: 2px solid #000;
+}
+.containeer table th {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.containeer table tr {
+  transition: 0.5s all 0.02s ease;
+}
+.containeer table tr:hover {
+  color: #fff;
+}
+.containeer table tr:hover .btn {
+  color: #fff;
+  font-weight: 500;
+}
+.containeer table tr:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.containeer table .btn {
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.6s all 0.02s;
+  outline: none;
+  font-weight: bold;
+}
+.containeer table .btn:hover {
+  background: #000;
+  color: #fff;
+  font-weight: 500;
+}
+.containeer .santa {
+  text-align: center;
+  margin-top: 2em;
 }
 
 /*# sourceMappingURL=style.css.map */

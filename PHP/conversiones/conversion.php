@@ -30,7 +30,7 @@
 <div class="containeer">
         <nav class="menu">
             <div class="menu-logo">
-                <a href="index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
+                <a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
             </div>
             <div class="menu-button">
                 <!-- MENU DROPDOWN PARA CONVERSION DE DIVISAS -->
@@ -46,26 +46,26 @@
                     <div class="dropdown-content">
                         <a href="../tblpaises/insertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
                         <a href="../tblpaises/Mostra.php" class="">Ver pasies existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="../tblpaises/modificar.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
-                        <a href="#" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
+                        <a href="../tblpaises/Mostra.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
+                        <a href="../tblpaises/Mostra.php" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA MONEDAS -->
                 <div class="dropdown">
                     <button class="dropdown-btn" href="#">Mantenimiento Monedas <i class="fab fa-bitcoin"></i></button>
                     <div class="dropdown-content">
-                        <a href="./insertarMoneda.php" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
-                        <a href="./MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="./ModificarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
-                        <a href="#" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
+                        <a href="../tblMonedas/insertarMoneda.php" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
+                        <a href="../tblMonedas/MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
+                        <a href="../tblMonedas/MostrarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
+                        <a href="../tblMonedas/MostrarMoneda.php" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA BASE -->
                 <div class="dropdown">
                     <button class="dropdown-btn" href="#">Mantenimiento base de datos <i class="fas fa-database"></i></button>
                     <div class="dropdown-content">
-                        <a href="PHP/createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
-                        <a href="PHP/dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
+                        <a href="../createDB.php" class="">Crear base de datos <i class="fas fa-database"></i></a>
+                        <a href="../dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- <a href="" class="btn">Realizar conversion <i class="fas fa-trash-alt"></i></a>
@@ -110,11 +110,10 @@
                 if(monedas){
                     alert(monedas);
                 }
-
-                console.log(monedas);
-
+                let valor = monedas;
+                console.log(valor);
+                document.getElementById('moneda').value = valor;
             })()
-
         }
         <?php
     }
@@ -123,34 +122,43 @@
         <div class="containner-content">
         <h1>Conversion de moneda</h1>
             <form  method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="" >
+            <input type="text" style="" id="moneda" name="moneda"  />
                 <p>
                     Moneda y cantidad que desea convertir: 
                 </p>
                 <p>
                 <input type="number" name="cantidad" min="0.01" step=".01" id="cantidad" required>
                 <select name="opcion" id="" required>
-                <option value="">Seleccione moneda</option>
+
                 <?php
-                
                     include($_SERVER['DOCUMENT_ROOT'].'/DIVISAS/include/config.inc');
                     $conexion = mysqli_connect($server,$user,$password,$DB);
                     mysqli_set_charset($conexion,"utf8");
 
+                    $moneda = $_POST["moneda"];
 
-                    $query = "select nombre from tblMonedas;";
-                    $runQuery = mysqli_query($conexion, $query);
-                    while ($row = mysqli_fetch_array($runQuery)){
-
-                ?>
-
+                    if($moneda == "dolar estadounidense"){
+                        $query = "select nombre from tblMonedas where nombre = '$moneda';";
+                        $runQuery = mysqli_query($conexion, $query);
+                        while ($row = mysqli_fetch_array($runQuery)){
+                    
+                    ?>
                         <option value="<?php echo $row['nombre']?>">
                             <?php echo $row['nombre']?>
                         </option>
-
-
                 <?php
-                
                     }
+                }else{
+                    $query = "select nombre from tblMonedas;";
+                    $runQuery = mysqli_query($conexion, $query);
+                    while ($row = mysqli_fetch_array($runQuery)){
+                ?>
+                    <option value="<?php echo $row['nombre']?>">
+                        <?php echo $row['nombre']?>
+                    </option>
+                <?php
+                }
+            }
                 ?>
                 </select>
                 </p>
@@ -202,6 +210,7 @@ mysqli_set_charset($conexion,"utf8");
             $monedaSeleccionada = $_POST['opcion'];
             $monedaConversion = $_POST['conversion'];
             $cantidad = $_POST['cantidad'];
+            $moneda = $_POST['moneda'];
 
             if($monedaSeleccionada ==  "dolar estadounidense"){
                 $query = "select val_local from tblMonedas where nombre = '$monedaConversion'";
@@ -213,6 +222,7 @@ mysqli_set_charset($conexion,"utf8");
     
                 floatval($valorLocal);
                 echo $monedaSeleccionada;
+                echo "<h1>".$moneda."</h1>";
                 echo $monedaConversion;
                 echo $cantidad;
                 echo "<br>".$valorLocal * $cantidad." ".$monedaConversion;
@@ -230,12 +240,8 @@ mysqli_set_charset($conexion,"utf8");
                 echo ($cantidad * 1)/$valorLocal;
                 echo "<h1>PUTO :V</h1>";
             }
-
         }
-
-    
     ?>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

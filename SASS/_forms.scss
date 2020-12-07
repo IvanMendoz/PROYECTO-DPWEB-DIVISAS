@@ -21,10 +21,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 4px solid rgb(9, 189, 221);
+        border: 4px solid rgb(9, 23, 221);
 
         form {
-          border: 12px solid green;
+          border: 12px solid blue;
           padding: 15px;
           width: 70%;
 
@@ -87,6 +87,24 @@
       min-height: 86.9vh;
       background: rgba(255, 255, 255, 0.4);
       padding: 20px;
+      text-align: center;
+
+      .slide {
+        width: 70%;
+        margin: auto;
+        border: 1px solid gray;
+
+        &::after {
+          content: '"Imagenes de referencia"';
+          display: block;
+          width: 100;
+          height: 31px;
+          background: #000;
+          color: #fff;
+          padding: 5px;
+          font-weight: inherit;
+        }
+      }
     }
   }
 }

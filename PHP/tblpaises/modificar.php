@@ -30,7 +30,7 @@
                 <div class="dropdown">
                     <button onclick="location.href ='../../index.html'" class="dropdown-btn">Pagina principal <i class="fas fa-home"></i></button>
                     <div class="dropdown-content">
-                    <a href="#" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
+                    <a href="../conversiones/conversion.php" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
@@ -39,8 +39,8 @@
                     <div class="dropdown-content">
                         <a href="./InsertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
                         <a href="./Mostra.php" class="" >Ver pasies existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="./modificar.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Modificar pais existente <i class="fas fa-edit"></i></a>
-                        <a href="#" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
+                        <a href="./Mostra.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Modificar pais existente <i class="fas fa-edit"></i></a>
+                        <a href="./Mostra.php" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA MONEDAS -->
@@ -49,8 +49,8 @@
                     <div class="dropdown-content">
                         <a href="../tblMonedas/insertarMoneda.php" class="">Ingresar nueva moneda <i class="fas fa-table"></i></a>
                         <a href="../tblMonedas/MostrarMoneda.php" class="">Ver monedas existentes <i class="fas fa-list-ol"></i></a>
-                        <a href="../tblMonedas/ModificarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
-                        <a href="#" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
+                        <a href="../tblMonedas/MostrarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
+                        <a href="../tblMonedas/MostrarMoneda.php" class="">Eliminar moneda existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA BASE -->

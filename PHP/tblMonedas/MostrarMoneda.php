@@ -25,7 +25,7 @@
                 <div class="dropdown">
                     <button onclick="location.href ='../../index.html'" class="dropdown-btn">Pagina principal <i class="fas fa-home"></i></button>
                     <div class="dropdown-content">
-                    <a href="#" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
+                    <a href="../conversiones/conversion.php" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
@@ -34,8 +34,8 @@
                     <div class="dropdown-content">
                     <a href="../tblpaises/insertarRegistro.html" class="">Ingresar nuevo pais <i class="fas fa-table"></i></a>
                     <a href="../tblpaises/Mostra.php" class="">Ver pasies existentes <i class="fas fa-list-ol"></i></a>
-                    <a href="../tblpaises/modificar.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
-                    <a href="#" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
+                    <a href="../tblpaises/Mostra.php" class="">Modificar pais existente <i class="fas fa-edit"></i></a>
+                    <a href="../tblpaises/Mostra.php" class="">Eliminar pais existente <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA MONEDAS -->
@@ -44,8 +44,8 @@
                     <div class="dropdown-content">
                         <a href="./insertarMoneda.php" class="">Ingresar nueva moneda  <i class="fas fa-table"></i></a>
                         <a href="./MostrarMoneda.php" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Ver monedas existentes   <i class="fas fa-list-ol"></i></a>
-                        <a href="./ModificarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
-                        <a href="#" class="">Eliminar moneda existente  <i class="fas fa-trash-alt"></i></a>
+                        <a href="./MostrarMoneda.php" class="">Modificar moneda existente <i class="fas fa-edit"></i></a>
+                        <a href="./MostrarMoneda.php" class="">Eliminar moneda existente  <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA BASE -->
@@ -64,7 +64,9 @@
             
             </div>
         </nav>
-        <h1>HOLA!!!!!!</h1>
+        <p>
+            <h1 style="text-align: center; margin:1em 0; font-weight:bold; color:#000;"> <span style="color:rgba(29, 3, 70, 0.8);"> Listado de monedas almacenadas</span> hasta este momento. <i class="fas fa-book"></i></h1>
+        </p>
     <?php
         include('../../include/config.inc');
         $connecction = mysqli_connect($server,$user,$password,$DB);
@@ -76,7 +78,7 @@
         {
         echo"<table width='100%' border='1' align='center'>";
         echo "<tr>";
-        echo "<th>id_moneda</th> <th>nombre</th> <th>val_local</th> <th>val_dolar</th> <th>id_pais</th> <th>Eliminar<th/> modificar";
+        echo "<th>id_moneda</th> <th>nombre</th> <th>valor local</th> <th>valor en dolar</th> <th>id_pais</th> <th>Eliminar<th/> Modificar";
         echo "</tr>";
             while ($row=mysqli_fetch_array($resultado))
             {
@@ -84,13 +86,12 @@
                 echo "<td>",$row['id_moneda'],"</td>";
                 echo "<td>",$row['nombre'],"</td>";
                 echo "<td>",$row['val_local'],"</td>";
-                echo "<td>",$row['val_dolar'],"</td>"; 
+                echo "<td>","$".$row['val_dolar'],"</td>"; 
                 echo "<td>",$row['id_pais'],"</td>"; 
-                echo "<td>"."<a href='./eliminarMoneda.php?id_moneda=".$row['id_moneda']."'>Eliminar</a>"."</td>";
-                echo "<td>"."<a href='./ModificarMoneda.php?id_moneda=".$row['id_moneda']."'>Modificar</a>"."</td>";   
+                echo "<td>"."<a class='btn' href='./eliminarMoneda.php?id_moneda=".$row['id_moneda']."'>Eliminar <i class='fas fa-trash-alt'></i></a>"."</td>";
+                echo "<td>"."<a class='btn' href='./ModificarMoneda.php?id_moneda=".$row['id_moneda']."'>Modificar <i class='fas fa-edit'></i> </a>"."</td>";   
                 echo "</tr>";
             }	
-            
         }
         else
         {
@@ -99,11 +100,13 @@
             echo ("Codigo de error: .<b>".mysql_errno ()."</b><br>");
             echo ("Descripcion de error: <b>".mysql_error ()."</b><br>");
         }	
-
+        echo ("</table>");
         //liberando recursos y cerrando la BD;
         mysqli_close($connecction);
     ?>
-<br><br>
+    <div class="santa">
+        <img class="" src="../../IMAGES/navidad.gif" alt="">
+    </div>
 </div>
 
 </body>
