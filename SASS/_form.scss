@@ -6,6 +6,21 @@
       40% 60%;
   }
 
+  .menu {
+    .fondo::after {
+      content: "";
+      display: block;
+      width: 620px;
+      height: 645px;
+      background: rgba(150, 6, 163, 0.5);
+      border-radius: 50%;
+      position: absolute;
+      top: -350px;
+      left: 620px;
+      z-index: -1;
+    }
+  }
+
   .form-box {
     grid-area: form;
     width: 100%;
@@ -23,10 +38,11 @@
       content: "";
       display: block;
       width: 520px;
-      height: 520px;
-      background: rgba(255, 7, 7, 0.5);
+      height: 545px;
+      background: rgba(163, 6, 6, 0.5);
       border-radius: 50%;
       position: absolute;
+      left: -300px;
       z-index: -1;
     }
 
@@ -47,6 +63,13 @@
     }
 
     & input[type="submit"] {
+      @include dropdown-btn();
+      cursor: pointer;
+      background: #000;
+      width: 40%;
+    }
+
+    & input[type="reset"] {
       @include dropdown-btn();
       cursor: pointer;
       background: #000;
@@ -103,6 +126,42 @@
     & input:focus,
     & input:valid {
       border-bottom: 2px solid rgb(102, 157, 219);
+    }
+  }
+
+  .form-info {
+    grid-area: info;
+    min-height: 86.9vh;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    text-align: center;
+
+    .alerta {
+      border: 1px solid rgba(163, 6, 6, 0.5);
+      transition: 0.6s all 0.02s ease;
+      padding: 5px;
+
+      &:hover {
+        border: 2px solid rgba(163, 6, 6, 0.5);
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .slide {
+      width: 70%;
+      margin: auto;
+      border: 1px solid gray;
+
+      &::after {
+        content: '"Imagenes de referencia"';
+        display: block;
+        width: 100%;
+        height: 31px;
+        background: #000;
+        color: #fff;
+        padding: 5px;
+        font-weight: inherit;
+      }
     }
   }
 }

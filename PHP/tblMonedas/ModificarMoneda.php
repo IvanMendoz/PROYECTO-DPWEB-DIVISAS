@@ -1,6 +1,6 @@
 <DOCTYPE! html>
 <html lang="en">
-	<head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CDN DE BOOTSTRAP -->
@@ -19,7 +19,7 @@
     <div class="containeer">
         <nav class="menu">
             <div class="menu-logo">
-                <a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
+            <span class="fondo"></span><a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
             </div>
             <div class="menu-button">
                 <!-- MENU DROPDOWN PARA CONVERSION DE DIVISAS -->
@@ -112,7 +112,7 @@
                     if ($resultado)
                     {
                         echo "<div>";
-                        echo"<span style = 'font-weight:500; font-size:17px;'>Seleccione el pais</span> <select name='slpais'>";
+                        echo"<span style = 'font-weight:500; font-size:17px;'>Pais </span> <select name='slpais'>";
                         while ($row=mysqli_fetch_array($resultado))
                         {
                             
@@ -145,10 +145,47 @@
             </form>
         </div>
         <div class="form-info">
-            <h1>HOLIII</h1>
+            <h3 style="color:#000;">TODOS LOS CAMBIOS QUE SE HAGAN SE GUARDARAN <span style="color:rgba(29, 3, 70, 0.8);">PERMANENTEMENTE</span></h3>
+            <p style="color:#000; font-weight:500" class="alerta"><span style="color:red; font-weight:bold">NOTA:</span> el pais no puede ser cambiado, si desea escoger otro pais debera eliminar este registro e ingresar uno nuevo para un mejor funcionamiento.</p>
+            <div id="carouselExampleIndicators slide" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="../../IMAGES/monedas1.jpg" class="d-block w-100" alt="DIVISAS">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="../../IMAGES/monedas3.jpg" class="d-block w-100" alt="DIVISAS">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="../../IMAGES/monedas4.png" class="d-block w-100" alt="DIVISAS">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="../../IMAGES/monedas5.jpg" class="d-block w-100" alt="DIVISAS">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+            </div>
+
         </div>
     </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 </html>
 

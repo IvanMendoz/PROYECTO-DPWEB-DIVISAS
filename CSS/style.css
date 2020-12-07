@@ -116,6 +116,18 @@ body {
   display: grid;
   grid-template: "form info" auto/40% 60%;
 }
+.containeer .menu .fondo::after {
+  content: "";
+  display: block;
+  width: 620px;
+  height: 645px;
+  background: rgba(150, 6, 163, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: -350px;
+  left: 620px;
+  z-index: -1;
+}
 .containeer .form-box {
   grid-area: form;
   width: 100%;
@@ -133,10 +145,11 @@ body {
   content: "";
   display: block;
   width: 520px;
-  height: 520px;
-  background: rgba(255, 7, 7, 0.5);
+  height: 545px;
+  background: rgba(163, 6, 6, 0.5);
   border-radius: 50%;
   position: absolute;
+  left: -300px;
   z-index: -1;
 }
 .containeer .form-box input {
@@ -155,6 +168,19 @@ body {
   color: #fff;
 }
 .containeer .form-box input[type=submit] {
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.6s all 0.02s;
+  outline: none;
+  cursor: pointer;
+  background: #000;
+  width: 40%;
+}
+.containeer .form-box input[type=reset] {
   background: transparent;
   border: none;
   padding: 7px 12px;
@@ -216,6 +242,37 @@ body {
 .containeer .form-box input:focus, .containeer .form-box input:valid {
   border-bottom: 2px solid #669ddb;
 }
+.containeer .form-info {
+  grid-area: info;
+  min-height: 86.9vh;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  text-align: center;
+}
+.containeer .form-info .alerta {
+  border: 1px solid rgba(163, 6, 6, 0.5);
+  transition: 0.6s all 0.02s ease;
+  padding: 5px;
+}
+.containeer .form-info .alerta:hover {
+  border: 2px solid rgba(163, 6, 6, 0.5);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+}
+.containeer .form-info .slide {
+  width: 70%;
+  margin: auto;
+  border: 1px solid gray;
+}
+.containeer .form-info .slide::after {
+  content: '"Imagenes de referencia"';
+  display: block;
+  width: 100%;
+  height: 31px;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  font-weight: inherit;
+}
 
 /*ESTILoS PARA EL SLIDER DE LA PAGINA DE INGRESAR REGISTROS*/
 .containeer .slideshow {
@@ -259,6 +316,30 @@ body {
   float: right;
 }
 
+.containeer .antes::before {
+  content: "";
+  display: block;
+  width: 320px;
+  height: 345px;
+  background: rgba(150, 6, 163, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 100px;
+  left: 940px;
+  z-index: -1;
+}
+.containeer .despues::after {
+  content: "";
+  display: block;
+  width: 520px;
+  height: 545px;
+  background: rgba(163, 6, 6, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  left: -300px;
+  top: 160px;
+  z-index: -1;
+}
 .containeer table {
   width: 90%;
   margin: auto;

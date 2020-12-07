@@ -65,6 +65,7 @@
             </div>
         </nav>
         <p>
+            <span class="antes"></span><span class="despues"></span>
             <h1 style="text-align: center; margin:1em 0; font-weight:bold; color:#000;"> <span style="color:rgba(29, 3, 70, 0.8);"> Listado de monedas almacenadas</span> hasta este momento. <i class="fas fa-book"></i></h1>
         </p>
     <?php

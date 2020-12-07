@@ -19,7 +19,8 @@
 <div class="containeer">
     <nav class="menu">
         <div class="menu-logo">
-            <a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
+        <span class="fondo"></span>
+<a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
         </div>
 
         <div class="menu-button">
@@ -67,30 +68,30 @@
             
     </div> -->
     </nav>
-    <div class="content-form">
+    <div class="containeer-contenido">
         
-        <div class="content-form-input">
             <div class="form-box">
                 <form action="InsertarMone.php" method="post">
-                    <div class="">
-                        <div class="in">
+                    
+                <h2>Ingrese la informacion</h2>
+                        <div class="">
                             <input type="text" name="txtNombreM" minlength="3" required>
                             <label class="">Nombre moneda</label>
                         </div>
-                        <div class="in">
+                        <div class="">
                             <input type="number" name="VL" step=".01" min="0" required>
                             <label class="">Valor local</label>
                         </div>
-                        <div class="in">
+                        <div class="">
                             <input type="number" name="VD" step=".01" min="0" required>
                             <label class="">Valor en dolar</label>
                         </div>
-                        <select name="slpais" id="" required>
+                        Seleccione el pais: <select name="slpais" id="" required>
                             <option value="">Seleccione...</option>
                         <?php
                             include('../../include/config.inc');
                             $connecction = mysqli_connect($server,$user,$password,$DB);
-                            mysqli_set_charset($connecction,"utf8");
+                            +mysqli_set_charset($connecction,"utf8");
                             $query = "select nombre from tblpaises;";
                             $runQuery=mysqli_query( $connecction, $query );
                             while ($row=mysqli_fetch_array($runQuery))
@@ -111,22 +112,25 @@
                         
                             mysqli_close($connecction);
                         ?>
-                        <p>
-                            <input type="submit" value="Enviar">
-                            <input type="reset" value="Cancelar">
-                        </p>
-                    </div>
+                        <div style="margin-top:1em;">
+                            <input style="margin-bottom:0;" type="submit" value="Enviar">
+                            <input style="margin-bottom:0; border-bottom: 2px solid rgb(102, 157, 219)" type="reset" value="Cancelar">
+                        </div>
+                        
                 </form>
             </div>
-        </div>
 
-        <div class="content-form-information">
+        <div class="form-info">
             <div class="">
                 <h2><span style="color:rgb(19, 23, 82);">Realice ahora</span> el cambio.</h2>
                 <p style="font-size:19px; font-weight:bold">Solo almancene el valor de la equivalencia de cualquier moneda y cualquiera pais,<br>y uselas para siempre!!!.</p>
             </div>
+            <p style="color:#000; font-weight:500" class="alerta"><span style="color:red; font-weight:bold">NOTA:</span> el valor local y el valor en dolar solo acepta 2 numeros maximo como decimal por cada moneda.<br>Para ingresar la moneda de un pais debe haber registrado previamente dicho pais. </p>
+            <div class="">
+                <img style="fill: none;" src="../../IMAGES/mundos.gif" alt="">
+            </div>
         
-            <div id="carouselExampleIndicators slide" class="carousel slide" data-ride="carousel">
+            <!-- <div id="carouselExampleIndicators slide" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -159,7 +163,7 @@
             
 
 
-            </div>
+            </div> -->
         </div>
     </div>
 

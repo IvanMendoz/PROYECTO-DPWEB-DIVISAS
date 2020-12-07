@@ -23,7 +23,7 @@
 <div class="containeer">
         <nav class="menu">
             <div class="menu-logo">
-                <a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
+            <span class="fondo"></span><a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
             </div>
             <div class="menu-button">
                 <!-- MENU DROPDOWN PARA CONVERSION DE DIVISAS -->
@@ -97,7 +97,7 @@
     <div class="form-box">
 
         <form method = "post" name="frmvalor" action="almacenarmodificar.php" id="form">
-        <h2>Informacion del registro seleccionada</h2>
+        <h2>Informacion del registro seleccionado</h2>
             <div class="">
                 <input type="text" name="txtId_pais" value="<?php echo $row['Id_pais'];?>" disabled required><br><br> 
                 <input type="text" name="txtId_pais" style="display:none;" value="<?php echo $row['Id_pais'];?>">
@@ -112,7 +112,14 @@
 
     </div>
     <div class="form-info">
-        <h1>HOLIII</h1>
+        <div class="">
+                <h2><span style="color:rgb(19, 23, 82);">Actualice registros</span> de manera rapida.</h2>
+                <p style="font-size:19px; font-weight:bold">Almacene el nombre de cada pais para poder utilizarlos al momento de ingresar nuevas monedas y realizar conversiones.</p>
+            </div>
+            <p style="color:#000; font-weight:500" class="alerta"><span style="color:red; font-weight:bold">NOTA:</span> De preferencia escriba correctamente el nombre del pais <br> de esta manera se evitaran problemas. </p>
+            <div class="">
+                <img style="fill: none;" src="../../IMAGES/mundos.gif" alt="">
+            </div>
     </div>
 </div>
      </div>
