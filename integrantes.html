@@ -13,9 +13,10 @@
     <!-- LINKS DE REFERENCIA DE GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <title>Pagina principal</title>
+    <title>Integrantes</title>
 </head>
 <body>
+
     <div class="containeer">
         <nav class="menu">
             <div class="menu-logo">
@@ -26,7 +27,8 @@
                 <div class="dropdown">
                     <button onclick="location.href ='index.html'" class="dropdown-btn activee" style="background:#000;">Pagina principal <i class="fas fa-home"></i></button>
                     <div class="dropdown-content">
-                        <a href="integrantes.html" class="">Lista de integrantes <i class="fas fa-users"></i></a>
+                        <a href="./conversion.php" class="" >Realizar conversion <i class="fas fa-dollar-sign"></i></a>
+                        <a href="integrantes.html" class="" style="background:#3a3a3a; color:#fff;border-radius:9px;">Lista de integrantes <i class="fas fa-users"></i></a>
                     </div>
                 </div>
                 <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
@@ -65,17 +67,42 @@
             
             </div>
         </nav>
-        <div class="content">
-            <div class="content-info">
-                <img src="IMAGES/coin.gif   " alt="">
-                <p><h1 style="font-weight:bold; color:#000;">REALIZA TU CONVERSION AHORA</h1></p>
-                <p><h3 style="font-weight:bold; color:rgb(68, 0, 0);"">La forma mas rapida y sencilla de realizar el cambio de moneda.</h3></p>
-                <button class="dropdown-btn activee" onclick="location.href ='PHP/conversiones/conversion.php'">
-                    Realizar Conversion   <i class="fas fa-dollar-sign"></i>
-                </button>
+        <div class="content" style="display: flex; flex-direction:column;">
+            <h2 style="margin-top:2em; font-weight: bold; background:linear-gradient(90deg, rgba(250, 12, 12, 0.9), rgba(0, 17, 255, 0.9)); background-clip: text; -webkit-background-clip: text; color:transparent;">INTEGRANTES DE GRUPO</h2>
+            <table>
+                <thead>
+                    <th>Carnet</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>25-1599-2019</td>
+                        <td>Abarca Rivas</td>
+                        <td>Ronald Heriberto</td>
+                    </tr>
+                    <tr>
+                        <td>25-0288-2019</td>
+                        <td>Mendoza Landaverde</td>
+                        <td>Ivan Alessandro</td>
+                    </tr>
+                    <tr>
+                        <td>25-0872-2019</td>
+                        <td>Quinteros Escobar</td>
+                        <td>Elias Jesus</td>
+                    </tr>
+                    <tr>
+                        <td>25-0234-2019</td>
+                        <td>Valle Palma</td>
+                        <td>Levi Asael</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="">
+                <img src="IMAGES/navidad.gif" alt="">
             </div>
         </div>
     </div>
-    <script src="JS/main.js"></script>
+    
 </body>
 </html>

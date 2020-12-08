@@ -19,8 +19,7 @@
 <div class="containeer">
     <nav class="menu">
         <div class="menu-logo">
-        <span class="fondo"></span>
-<a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
+        <span class="fondo"></span><a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
         </div>
 
         <div class="menu-button">
@@ -29,6 +28,7 @@
                 <button onclick="location.href ='../../index.html'" class="dropdown-btn">Pagina principal <i class="fas fa-home"></i></button>
                 <div class="dropdown-content">
                 <a href="../conversiones/conversion.php" class="">Realizar conversion <i class="fas fa-dollar-sign"></i></a>
+                <a href="../../integrantes.html" class="">Lista de integrantes <i class="fas fa-users"></i></a>
             </div>
             </div>
             <!-- MENU DROPDOWN PARA MANTENIMIENTO DE LA TABLA PAISES -->
