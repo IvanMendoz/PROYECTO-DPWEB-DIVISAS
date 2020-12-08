@@ -99,12 +99,12 @@
         <form method = "post" name="frmvalor" action="almacenarmodificar.php" id="form">
         <h2>Informacion del registro seleccionado</h2>
             <div class="">
-                <input type="text" name="txtId_pais" value="<?php echo $row['Id_pais'];?>" disabled required><br><br> 
-                <input type="text" name="txtId_pais" style="display:none;" value="<?php echo $row['Id_pais'];?>">
+                <input type="text" name="txtId_pais" value="<?php echo $row['Id_pais'];?>" autocomplete="off" disabled required><br><br> 
+                <input type="text" name="txtId_pais"  style="display:none;" value="<?php echo $row['Id_pais'];?>" autocomplete="off">
                 <label for="">Id pais</label>
             </div>
             <div class="">
-                <input type="text" name="txtNombre" minlength="3" value="<?php echo $row['nombre'];?>" required><br><br>
+                <input type="text" name="txtNombre" minlength="3" value="<?php echo $row['nombre'];?>" autocomplete="off" required><br><br>
                 <label for="">Nombre pais</label>
             </div>
             <button onclick="f1()" class="btn" >Modificar</button>

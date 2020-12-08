@@ -75,16 +75,16 @@
                     
                 <h2>Ingrese la informacion</h2>
                         <div class="">
-                            <input type="text" name="txtNombreM" minlength="3" required>
-                            <label class="">Nombre moneda</label>
+                            <input type="text" name="txtNombreM" minlength="3" required autocomplete="off">
+                            <label class="" style="position:absolute; left:20px;">Nombre moneda</label>
                         </div>
                         <div class="">
-                            <input type="number" name="VL" step=".01" min="0" required>
-                            <label class="">Valor local</label>
+                            <input type="number" name="VL" step=".01" min="0" required autocomplete="off">
+                            <label class="" style="position:absolute; left:20px;">Valor local</label>
                         </div>
                         <div class="">
-                            <input type="number" name="VD" step=".01" min="0" required>
-                            <label class="">Valor en dolar</label>
+                            <input type="number" name="VD" step=".01" min="0" required autocomplete="off">
+                            <label class="" style="position:absolute; left:20px;">Valor en dolar</label>
                         </div>
                         Seleccione el pais: <select name="slpais" id="" required>
                             <option value="">Seleccione...</option>

@@ -84,22 +84,21 @@
         <div class="form-box">
             <form method = "post" name="frmvalor" action="./MonedaUpdate.php">
                 <h2>Informacion del registro seleccionada</h2>
-
                 <div class="">
-                    <input type="text" name="id_moneda2" value="<?php echo $row['id_moneda'];?>" disabled required>
-                    <input type="text" name="id_moneda2" style="display:none;" value="<?php echo $row['id_moneda'];?>">
+                    <input type="text" name="id_moneda2" autocomplete="off" value="<?php echo $row['id_moneda'];?>" disabled required>
+                    <input type="text" name="id_moneda2" style="display:none;" autocomplete="off" value="<?php echo $row['id_moneda'];?>">
                     <label for="">id moneda</label> 
                 </div>
                 <div class="">
-                    <input type="text" name="txtnombre" value="<?php echo $row['nombre'];?>" minlength="3" required>
+                    <input type="text" name="txtnombre" autocomplete="off" value="<?php echo $row['nombre'];?>" minlength="3" required>
                     <label for="">Nombre</label>
                 </div>
                 <div class="">
-                    <input type="number" name="txtVL" value="<?php echo $row['val_local'];?>" required min="0" step=".01">
+                    <input type="number" name="txtVL" autocomplete="off" value="<?php echo $row['val_local'];?>" required min="0" step=".01">
                     <label for="">Valor local</label>
                 </div>
                 <div class="">
-                    <input type="number" name="txtVD" value="<?php echo $row['val_dolar'];?>" required min="0" step=".01">  
+                    <input type="number" name="txtVD" autocomplete="off" value="<?php echo $row['val_dolar'];?>" required min="0" step=".01">  
                     <label for="">Valor en dolar</label> 
                 </div>
                 <?php
