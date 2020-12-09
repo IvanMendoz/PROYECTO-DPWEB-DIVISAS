@@ -26,8 +26,7 @@
     <title>Realizar conversion</title>
 </head>
 <body>
-    
-<div class="containeer">
+    <div class="containeer">
         <nav class="menu">
             <div class="menu-logo">
             <span class="fondo"></span><a href="../../index.html"> <img src="../../IMAGES/divisas7.png" alt="DIVISAS"> </a>
@@ -68,86 +67,17 @@
                         <a href="../dropDB.php" class="">Eliminar base de datos <i class="fas fa-trash-alt"></i></a>
                     </div>
                 </div>
-                <!-- <a href="" class="btn">Realizar conversion <i class="fas fa-trash-alt"></i></a>
-            
-                <a href="" class="btn">Mantenimiento Paises <i class="fas fa-globe-americas"></i><a>
-            
-                <a href="" class="btn">Mantenimiento Monedas <i class="fab fa-bitcoin"></i></a> -->
-            
             </div>
         </nav>
-    <script>
-        <?php
-            include('../../include/config.inc');
-            $connecction = mysqli_connect($server,$user,$password,$DB);
-            mysqli_set_charset($connecction,"utf8");
-            $query = "select nombre from tblMonedas;";
-            $runQuery=mysqli_query( $connecction, $query );
-            while ($row=mysqli_fetch_array($runQuery))
-            {
-        ?>
-        window.onload= () =>{
-
-            eleccion();
-            
-            function eleccion(){
-            ( async ()=>{
-                const {value:monedas } = await Swal.fire({
-                    type: 'success',
-                    title:'Seleccione una moneda',
-                    text: 'Esta moneda se usara para realizar la conversion',
-                    padding: '15px',
-                    footer:'<h4>Es muy inportante</h4>',
-                    confirmButtonText: "Seleccionar",
-                    allowOutsideClick: false,
-                    allowEscapeKey: false,
-                    allowEnterKey:false,
-                    stopKeydownPropagation:false,
-                    input: 'select',
-                    inputValue: '',
-                    inputOptions: {
-                    
-                    <?php while ($row=mysqli_fetch_array($runQuery)){?>
-                    '<?php echo $row['nombre']?>': '<?php echo $row['nombre']?>',
-                    <?php
-                        }
-                    ?>
-
-                    }
-                });
-
-                if(monedas){
-                    console.log(monedas);
-                }
-                let valor = monedas;
-                console.log(valor);
-                document.getElementById('moneda').value = valor;
-            })()};
-        }
-        <?php
-            }
-        ?>
-    </script>
-
     <div class="containeer-contenido">
-            <div class="form-box">
-                <form  method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="" >
-                    <h2>Conversion de moneda</h2>
-                    <div class="">
-                        <input type="text" style="border-bottom:2px solid rgb(102, 157, 219);" id="moneda" name="moneda" required readonly/>
-                        <label for="" style="position:absolute; left:24px; top:0px; color:rgb(102, 157, 219); font-weight:bold">Moneda seleccionada</label>
-                    </div>
-
-                    <div class="">
-                        <input type="number" name="cantidad" min="0.01" step=".01" id="cantidad" required>
-                        <label for="" style="position:absolute; left:25px;">Cantidad a convertir</label>
-                    </div>
-
+            <div class="form-box" style="display: flex; flex-flow:column nowrap; align-items:center; justify-content: center;">
+                <form  method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="" id="lista"><br><br>
+                    <h2>Conversion de moneda</h2><br>
+                        <div>
                         <h6 style="font-weight:initial;">
                             Seleccione la moneda a la cual desea convetir el valor:
                         </h6>
-                        <p>
-                        <select name="conversion" id="" required>
+                        <select name="conversion" id="sele" required>
                         <option value="">Seleccione moneda...</option>
                         <?php
                         
@@ -171,125 +101,130 @@
                             }
                         ?>
                         </select>
-                        </p>
-                        <div class="buttons">
-                            <input type="submit" value="Convertir" name=submit class="">
-                            <button type="button" class="btn" style="width:190px; border-bottom:2px solid rgb(102, 157, 219);" onclick="eleccion1();">Elegir otra moneda</button>
                         </div>
+                </form>
+                <form  method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" class="" >
+                    <div class="">
+                        <input type="text" name="moneda" value="<?php if(isset($_POST['conversion'])){echo $_POST['conversion']; }?>" readonly required>
+                        <label for="" style="position:absolute; left:25px;"></label>
+                    </div>
+                    <div class="">
+                        <input type="radio" name="crb" checked  style="margin-left:100px;" <?php
+                        include($_SERVER['DOCUMENT_ROOT'].'/DIVISAS/include/config.inc');
+                        $conexion = mysqli_connect($server,$user,$password,$DB);
+                        mysqli_set_charset($conexion,"utf8");
+                        if(isset($_POST['conversion'])){
+                            $vl=$_POST['conversion'];
+                            //$query = "select nombre from tblMonedas;";
+                            $query = "select val_dolar from tblMonedas where nombre='$vl'";
+                            $runQuery = mysqli_query($conexion, $query);
+                            if($row = mysqli_fetch_array($runQuery)){
+                                echo "value=".$row['val_dolar']."";
+                            }
+                        }                   
+                        //
+                        
+                        ?> id="rb1">
+                        
+                        <label for="" style="position:absolute; left:25px;" id="lbl1">Dolar a <?php if(isset($_POST['conversion'])){echo $_POST['conversion']; }?></label>
+                    </div>
+                    <div class="">
+                        <input type="radio" name="crb" style="margin-left:100px;" <?php
+                        include($_SERVER['DOCUMENT_ROOT'].'/DIVISAS/include/config.inc');
+                        $conexion = mysqli_connect($server,$user,$password,$DB);
+                        mysqli_set_charset($conexion,"utf8");
+                        if(isset($_POST['conversion'])){
+                            $vl=$_POST['conversion'];
+                            //$query = "select nombre from tblMonedas;";
+                            $query = "select val_local from tblMonedas where nombre='$vl'";
+                            $runQuery = mysqli_query($conexion, $query);
+                            if($row = mysqli_fetch_array($runQuery)){
+                                echo "value=".$row['val_local']."";
+                            }
+                        }
+    
+                   
+                        //
+                        
+                        
+                        
+                        ?> id="rb2">
+                        
+                        <label for="" style="position:absolute; left:25px;" id="lbl2"><?php if(isset($_POST['conversion'])){echo $_POST['conversion']; }?> a Dolar</label>
+                    </div>
+                 
+                    <div class="">
+                        <input type="number" name="cantidad" min="0.01" step=".01" id="cantidad" required>
+                        <label for="" style="position:absolute; left:25px;" >Cantidad a convertir</label>
+                    </div>
+
+                        <div class="buttons">
+                            <input type="submit" style="width:110px" value="Convertir" name=submit class="" id="btn">
+                        </div>
+                        <input type="text" name="texto" id="texto" style="display:none;" value="Dolar a <?php if(isset($_POST['conversion'])){echo $_POST['conversion']; }?>">
                 </form>
                 <!-- FIN DEL FORM-BOX -->
             </div>
             <div class="form-info">
+                <h1>CONVERSIONES <span style="color:rgb(150, 90, 193);"> AL INSTANTE</span></h1>
+                <div class="infa" style=" background:rgba(0,0,0,0.6); border:2px solid #000; box-shadow: 4px 4px 4px rgba(0, 0, 0, .0.6);">
 
-        <?php
+                <script>
+                    var s =document.getElementById("sele");
+                    var f =document.getElementById("lista");
+                    var texto =document.getElementById("texto");
+                    var rb1 =document.getElementById("rb1");
+                    var rb2 =document.getElementById("rb2");
+                    var lbl1 =document.getElementById("lbl1");
+                    var lbl2 =document.getElementById("lbl2");
+                    s.addEventListener("change",()=>{
 
-            include($_SERVER['DOCUMENT_ROOT'].'/DIVISAS/include/config.inc');
-            $conexion = mysqli_connect($server,$user,$password,$DB);
-            mysqli_set_charset($conexion,"utf8");
-        
-            if(isset($_POST['submit'])){
-                $monedaConversion = $_POST['conversion'];
-                $cantidad = $_POST['cantidad'];
-                $moneda = $_POST['moneda'];
-                $eleccion;
+                        f.submit();
+                    })
 
+                    rb1.addEventListener("change",()=>{
 
-                $query = "select nombre from tblMonedas where nombre = '$moneda'";
-                $runQuery = mysqli_query($conexion, $query);
-                while ($row = mysqli_fetch_array($runQuery)){
-                    $eleccion = $row['nombre'];
-                }
-                echo "<br><br>".$eleccion."<br><br>";
+                        texto.value=lbl1.textContent;
+                        //console.log(texto.textContent)
+                    })
+                    rb2.addEventListener("change",()=>{
 
+                        texto.value=lbl2.textContent;
+                        //console.log(texto.textContent)
+                    })
+                </script>
 
-                if($moneda ==  "dolar estadounidense" || $moneda == "dolar" || $moneda == "dolarestadounidense"){
-                    $query = "select val_local from tblMonedas where nombre = '$monedaConversion'";
-                    $runQuery = mysqli_query( $conexion, $query );
-                    while ($row = mysqli_fetch_array( $runQuery)){
-                        $valorLocal = $row['val_local'];
-        
-                    }
-        
-                    floatval($valorLocal);
-                    echo $moneda;
-                    echo "<h1>".$moneda."</h1>";
-                    echo $monedaConversion;
-                    echo $cantidad;
-                    $res = (round($valorLocal * $cantidad))/100;
-                    echo "<br>".$res." ".$monedaConversion;
-        
-                    echo "<h1>HOLAAAAA</h1>";
+                <?php
 
-                }else{
-
-                    $query = "select val_local from tblMonedas where nombre = '$moneda'";
-                    $runQuery = mysqli_query($conexion, $query);
-                    while ($row = mysqli_fetch_array($runQuery)){
-                        $valorLocal = $row["val_local"];
-                    }
-                    floatval($valorLocal);
-                    echo ($cantidad * 1)/$valorLocal;
-                    echo "<h1>SI FUNCIONO :V</h1>";
-                }
-
-            }
-        ?>
-   </div>
-        <!-- FIN DEL CONTAINEER-CONTENIDO -->
-    </div>
-    <!-- FIN DEL CONTAINEER -->
-    </div>
-
-    <script src="../../JS/sweetalert.js"></script>
-    <script src="../../JS/jquery-3.3.1.min.js"></script>
-    <script src="../../popper/popper.min.js"></script>
-    <script src="../../plugins/sweetAlert2/sweetalert2.all.min.js"></script>
-
-    <script>
-        <?php
-            include('../../include/config.inc');
-            $connecction = mysqli_connect($server,$user,$password,$DB);
-            mysqli_set_charset($connecction,"utf8");
-            $query = "select nombre from tblMonedas;";
-            $runQuery=mysqli_query( $connecction, $query );
-            while ($row=mysqli_fetch_array($runQuery))
-            {
-        ?>
-            function eleccion1(){
-            ( async ()=>{
-                const {value:monedas } = await Swal.fire({
-                    type: 'success',
-                    title:'Seleccione una moneda',
-                    text: 'Esta moneda se usara para realizar la conversion',
-                    padding: '15px',
-                    footer:'<h4>Es muy inportante</h4>',
-                    confirmButtonText: "Seleccionar",
-                    allowOutsideClick: false,
-                    allowEscapeKey: false,
-                    allowEnterKey:false,
-                    stopKeydownPropagation:false,
-                    input: 'select',
-                    inputValue: '',
-                    inputOptions: {
-                    
-                    <?php while ($row=mysqli_fetch_array($runQuery)){?>
-                    '<?php echo $row['nombre']?>': '<?php echo $row['nombre']?>',
-                    <?php
+                    if(isset($_POST['submit'])){
+                        if($_POST['moneda']==""){
+                            echo 
+                            '<script>
+                                swal({
+                                    title: "ERROR!",
+                                    text: "Seleccione una moneda primero.",
+                                    type: "error"
+                                }).then(function() {
+                                    
+                                });
+                            </script>';
+                        }else{
+                            $valor=$_POST['cantidad']*$_POST['crb'];
+                            /*echo "<script>
+                            
+                            alert(".$valor.")
+                
+                            </script>";*/
+                            echo '<p style="font-size:75px;color:#fff;" >'.$_POST['cantidad']." de ".$_POST['texto'].' son:</p>';
+                            echo '<p style="font-size:75px;color:#fff;">'.$valor.'</p>';
+                        
                         }
-                    ?>
+                    
                     }
-                });
-                if(monedas){
-                    console.log(monedas);
-                }
-                let valor = monedas;
-                console.log(valor);
-                document.getElementById('moneda').value = valor;
-            })();
-        }
-        <?php
-            }
-        ?>
-    </script>
+                
+                ?>
+                </div>
+            </div>
+    </div>
 </body>
 </html>
